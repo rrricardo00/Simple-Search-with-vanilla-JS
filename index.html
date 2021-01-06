@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="pesq" type="text">
+    <div class="conteudos">
+        <div aria-sp>aparecer sp</div>
+        <div aria-rj>aparecer rj</div>
+        <div aria-rj>aparecer rj2</div>
+        <div aria-rj>aparecer rj3</div>
+        <div aria-rj>aparecer rj4</div>
+        <div aria-se>aparecer se</div>
+        <div aria-bh>aparecer bh</div>
+        <div aria-ba>aparecer ba</div>
+    </div>
+
+
+    <script>
+        const p = document.querySelector('.pesq');
+        let ar = [].slice.call(document.querySelector('.conteudos').children);
+        
+        function pesquisar(e){
+            
+            let filtro = ar.filter(item => item.hasAttribute(p.value));
+            document.querySelector('.conteudos').innerHTML = filtro.map(item => item.outerHTML).join('');
+        }
+
+        p.addEventListener('keyup', pesquisar)
+
+    </script>
+</body>
+
+</html>
