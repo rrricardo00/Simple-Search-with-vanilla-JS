@@ -10,28 +10,27 @@
 <body>
     <input class="pesq" type="text">
     <div class="conteudos">
-        <div aria-sp>aparecer sp</div>
-        <div aria-rj>aparecer rj</div>
-        <div aria-rj>aparecer rj2</div>
-        <div aria-rj>aparecer rj3</div>
-        <div aria-rj>aparecer rj4</div>
-        <div aria-se>aparecer se</div>
-        <div aria-bh>aparecer bh</div>
-        <div aria-ba>aparecer ba</div>
+        <div sp>aparecer sp</div>
+        <div rj>aparecer rj</div>
+        <div rj>aparecer rj2</div>
+        <div rj>aparecer rj3</div>
+        <div rj>aparecer rj4</div>
+        <div se>aparecer se</div>
+        <div bh>aparecer bh</div>
+        <div ba>aparecer ba</div>
     </div>
 
 
     <script>
         const p = document.querySelector('.pesq');
         let ar = [].slice.call(document.querySelector('.conteudos').children);
-        
-        function pesquisar(e){
-            
+
+        function pesquisar(e) {
             let filtro = ar.filter(item => item.hasAttribute(p.value));
             document.querySelector('.conteudos').innerHTML = filtro.map(item => item.outerHTML).join('');
         }
 
-        p.addEventListener('keyup', pesquisar)
+        p.addEventListener('keyup', pesquisar);
 
     </script>
 </body>
